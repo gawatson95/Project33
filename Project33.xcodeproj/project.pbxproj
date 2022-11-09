@@ -10,6 +10,7 @@
 		C02E9172291C1A3100073898 /* SelectGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E9171291C1A3000073898 /* SelectGenreViewController.swift */; };
 		C02E9174291C1CA600073898 /* AddCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E9173291C1CA600073898 /* AddCommentsViewController.swift */; };
 		C02E9176291C22FD00073898 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E9175291C22FD00073898 /* SubmitViewController.swift */; };
+		C02E9179291C2F6400073898 /* Whistle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E9178291C2F6400073898 /* Whistle.swift */; };
 		C04DFFE5291B22E800EDBC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04DFFE4291B22E800EDBC33 /* AppDelegate.swift */; };
 		C04DFFE7291B22E800EDBC33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04DFFE6291B22E800EDBC33 /* SceneDelegate.swift */; };
 		C04DFFE9291B22E800EDBC33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04DFFE8291B22E800EDBC33 /* ViewController.swift */; };
@@ -17,12 +18,15 @@
 		C04DFFEE291B22E900EDBC33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C04DFFED291B22E900EDBC33 /* Assets.xcassets */; };
 		C04DFFF1291B22E900EDBC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C04DFFEF291B22E900EDBC33 /* LaunchScreen.storyboard */; };
 		C04DFFF9291B23F700EDBC33 /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04DFFF8291B23F700EDBC33 /* RecordWhistleViewController.swift */; };
+		C0D0BC22291C3D74009B0CE5 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0BC21291C3D74009B0CE5 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C02E9171291C1A3000073898 /* SelectGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreViewController.swift; sourceTree = "<group>"; };
 		C02E9173291C1CA600073898 /* AddCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsViewController.swift; sourceTree = "<group>"; };
 		C02E9175291C22FD00073898 /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
+		C02E9177291C258000073898 /* Project33.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Project33.entitlements; sourceTree = "<group>"; };
+		C02E9178291C2F6400073898 /* Whistle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whistle.swift; sourceTree = "<group>"; };
 		C04DFFE1291B22E800EDBC33 /* Project33.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project33.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04DFFE4291B22E800EDBC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C04DFFE6291B22E800EDBC33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +36,7 @@
 		C04DFFF0291B22E900EDBC33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C04DFFF2291B22E900EDBC33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C04DFFF8291B23F700EDBC33 /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
+		C0D0BC21291C3D74009B0CE5 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 		C04DFFE3291B22E800EDBC33 /* Project33 */ = {
 			isa = PBXGroup;
 			children = (
+				C02E9177291C258000073898 /* Project33.entitlements */,
 				C04DFFE4291B22E800EDBC33 /* AppDelegate.swift */,
 				C04DFFE6291B22E800EDBC33 /* SceneDelegate.swift */,
 				C04DFFE8291B22E800EDBC33 /* ViewController.swift */,
@@ -71,7 +77,9 @@
 				C02E9171291C1A3000073898 /* SelectGenreViewController.swift */,
 				C02E9173291C1CA600073898 /* AddCommentsViewController.swift */,
 				C02E9175291C22FD00073898 /* SubmitViewController.swift */,
+				C0D0BC21291C3D74009B0CE5 /* ResultsViewController.swift */,
 				C04DFFEA291B22E800EDBC33 /* Main.storyboard */,
+				C02E9178291C2F6400073898 /* Whistle.swift */,
 				C04DFFED291B22E900EDBC33 /* Assets.xcassets */,
 				C04DFFEF291B22E900EDBC33 /* LaunchScreen.storyboard */,
 				C04DFFF2291B22E900EDBC33 /* Info.plist */,
@@ -150,10 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02E9179291C2F6400073898 /* Whistle.swift in Sources */,
 				C02E9176291C22FD00073898 /* SubmitViewController.swift in Sources */,
 				C04DFFE9291B22E800EDBC33 /* ViewController.swift in Sources */,
 				C04DFFE5291B22E800EDBC33 /* AppDelegate.swift in Sources */,
 				C02E9172291C1A3100073898 /* SelectGenreViewController.swift in Sources */,
+				C0D0BC22291C3D74009B0CE5 /* ResultsViewController.swift in Sources */,
 				C04DFFF9291B23F700EDBC33 /* RecordWhistleViewController.swift in Sources */,
 				C02E9174291C1CA600073898 /* AddCommentsViewController.swift in Sources */,
 				C04DFFE7291B22E800EDBC33 /* SceneDelegate.swift in Sources */,
@@ -301,11 +311,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Project33/Project33.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VQAXAL86KV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Project33/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to record your whistle.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -329,11 +341,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Project33/Project33.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VQAXAL86KV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Project33/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to record your whistle.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -75,7 +75,7 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
         
         playButton = UIButton()
         playButton.translatesAutoresizingMaskIntoConstraints = false
-        playButton.setTitle("Tap t0 Play", for: .normal)
+        playButton.setTitle("Tap to Play", for: .normal)
         playButton.isHidden = true
         playButton.alpha = 0
         playButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
