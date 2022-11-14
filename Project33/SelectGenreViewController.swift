@@ -39,7 +39,10 @@ class SelectGenreViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
-            let genre = cell.textLabel?.text ?? SelectGenreViewController.genres[0]
+            var config = UIListContentConfiguration.cell()
+            config.text = SelectGenreViewController.genres[indexPath.row]
+            cell.contentConfiguration = config
+            let genre = config.text ?? SelectGenreViewController.genres[0]
             let vc = AddCommentsViewController()
             vc.genre = genre
             navigationController?.pushViewController(vc, animated: true)

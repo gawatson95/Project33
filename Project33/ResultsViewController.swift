@@ -29,29 +29,28 @@ class ResultsViewController: UITableViewController {
         let query = CKQuery(recordType: "Suggestions", predicate: predicate)
         query.sortDescriptors = [sort]
         
-        CKContainer.default().publicCloudDatabase.fetch(withQuery: query) { [unowned self] results in
-            switch results {
-            case .failure(let error):
-                print(error.localizedDescription)
+        CKContainer.default().publicCloudDatabase.fetch(withQuery: query) { [unowned self] result in
+            switch result {
             case .success(let results):
-                let results = results.matchResults[1].1
-                switch results {
+                let newResult = results.matchResults
+                //try to figure out how to get [CKRecord] from this new fetch function. Getting out of range error
+                switch newResult {
                 case .success(let record):
-                    self.parseResults(records: [record])
+                    self.parseResults(record: record)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
                 
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
     
-    func parseResults(records: [CKRecord]) {
+    func parseResults(record: CKRecord) {
         var newSuggestions = [String]()
-        
-        for record in records {
-            newSuggestions.append(record["text"] as! String)
-        }
+    
+        newSuggestions.append(record["text"] as! String)
         
         DispatchQueue.main.async { [unowned self] in
             self.suggestions = newSuggestions
@@ -60,7 +59,43 @@ class ResultsViewController: UITableViewController {
     }
     
     @objc func downloadTapped() {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.tintColor = UIColor.black
+        spinner.startAnimating()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: spinner)
         
+        CKContainer.default().publicCloudDatabase.fetch(withRecordID: whistle.recordID) { [unowned self] record, error in
+            if error != nil {
+                DispatchQueue.main.async {
+                    let ac = UIAlertController(title: "Error", message: "There was an error downloading your whistle. Please try again.", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(ac, animated: true)
+                    
+                    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Download", style: .plain, target: self, action: #selector(self.downloadTapped))
+                }
+            } else {
+                if let record = record {
+                    if let asset = record["audio"] as? CKAsset {
+                        self.whistle.audio = asset.fileURL
+                        
+                        DispatchQueue.main.async {
+                            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Listen", style: .plain, target: self, action: #selector(self.listenTapped))
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @objc func listenTapped() {
+        do {
+            whistlePlayer = try AVAudioPlayer(contentsOf: whistle.audio)
+            whistlePlayer.play()
+        } catch {
+            let ac = UIAlertController(title: "Playback failed", message: "There was a problem playing your whistle.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,7 +126,6 @@ class ResultsViewController: UITableViewController {
         cell.textLabel?.numberOfLines = 0
         
         if indexPath.section == 0 {
-            var config = UIListContentConfiguration.cell()
             cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
             
             if whistle.comments.count == 0 {
@@ -104,6 +138,7 @@ class ResultsViewController: UITableViewController {
             
             if indexPath.row == suggestions.count {
                 config.text = "Add suggestion"
+                config.textProperties.color = .systemBlue
                 cell.selectionStyle = .gray
             } else {
                 config.text = suggestions[indexPath.row]

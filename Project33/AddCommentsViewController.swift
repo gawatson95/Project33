@@ -26,7 +26,7 @@ class AddCommentsViewController: UIViewController, UITextViewDelegate {
         vc.genre = genre
         
         if comments.text == placeholder {
-            vc.comments = ""
+            vc.comments = "No comments"
         } else {
             vc.comments = comments.text
         }

@@ -100,7 +100,7 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.accessoryType = .disclosureIndicator
         var config = UIListContentConfiguration.cell()
-        config.attributedText = makeAttributedString(title: whistles[indexPath.row].genre, subtitle: whistles[indexPath.row].comments)
+        config.attributedText = makeAttributedString(title: whistles[indexPath.row].genre, subtitle: whistles[indexPath.row].comments ?? "")
         cell.textLabel?.numberOfLines = 0
         cell.contentConfiguration = config
         return cell
@@ -108,6 +108,12 @@ class ViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return whistles.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ResultsViewController()
+        vc.whistle = whistles[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
