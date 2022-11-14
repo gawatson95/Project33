@@ -30,27 +30,21 @@ class ResultsViewController: UITableViewController {
         query.sortDescriptors = [sort]
         
         CKContainer.default().publicCloudDatabase.fetch(withQuery: query) { [unowned self] result in
-            switch result {
-            case .success(let results):
-                let newResult = results.matchResults
-                //try to figure out how to get [CKRecord] from this new fetch function. Getting out of range error
-                switch newResult {
-                case .success(let record):
-                    self.parseResults(record: record)
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-                
-            case .failure(let error):
-                print(error.localizedDescription)
+            var array = [CKRecord]()
+            
+            if let newResult = try? result.get() {
+                let records = newResult.matchResults.compactMap { try? $0.1.get() }
+                self.parseResults(records: array)
             }
         }
     }
     
-    func parseResults(record: CKRecord) {
+    func parseResults(records: [CKRecord]) {
         var newSuggestions = [String]()
     
-        newSuggestions.append(record["text"] as! String)
+        for record in records {
+            newSuggestions.append(record["text"] as! String)
+        }
         
         DispatchQueue.main.async { [unowned self] in
             self.suggestions = newSuggestions
@@ -156,10 +150,10 @@ class ResultsViewController: UITableViewController {
         
         let ac = UIAlertController(title: "Suggest a song", message: nil, preferredStyle: .alert)
         ac.addTextField()
-        ac.addAction(UIAlertAction(title: "Submit", style: .default) { [weak self, ac] _ in
+        ac.addAction(UIAlertAction(title: "Submit", style: .default) { [unowned self, ac] _ in
             if let textField = ac.textFields?[0] {
                 if textField.text!.count > 0 {
-                    self?.add(suggestion: textField.text!)
+                    self.add(suggestion: textField.text!)
                 }
             }
         })

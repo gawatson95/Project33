@@ -18,6 +18,7 @@
 		C04DFFEE291B22E900EDBC33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C04DFFED291B22E900EDBC33 /* Assets.xcassets */; };
 		C04DFFF1291B22E900EDBC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C04DFFEF291B22E900EDBC33 /* LaunchScreen.storyboard */; };
 		C04DFFF9291B23F700EDBC33 /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04DFFF8291B23F700EDBC33 /* RecordWhistleViewController.swift */; };
+		C0AA4AC22922AD5600F7DFEA /* MyGenresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA4AC12922AD5600F7DFEA /* MyGenresViewController.swift */; };
 		C0D0BC22291C3D74009B0CE5 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0BC21291C3D74009B0CE5 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		C04DFFF0291B22E900EDBC33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C04DFFF2291B22E900EDBC33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C04DFFF8291B23F700EDBC33 /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
+		C0AA4AC12922AD5600F7DFEA /* MyGenresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGenresViewController.swift; sourceTree = "<group>"; };
 		C0D0BC21291C3D74009B0CE5 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				C02E9173291C1CA600073898 /* AddCommentsViewController.swift */,
 				C02E9175291C22FD00073898 /* SubmitViewController.swift */,
 				C0D0BC21291C3D74009B0CE5 /* ResultsViewController.swift */,
+				C0AA4AC12922AD5600F7DFEA /* MyGenresViewController.swift */,
 				C04DFFEA291B22E800EDBC33 /* Main.storyboard */,
 				C02E9178291C2F6400073898 /* Whistle.swift */,
 				C04DFFED291B22E900EDBC33 /* Assets.xcassets */,
@@ -166,6 +169,7 @@
 				C0D0BC22291C3D74009B0CE5 /* ResultsViewController.swift in Sources */,
 				C04DFFF9291B23F700EDBC33 /* RecordWhistleViewController.swift in Sources */,
 				C02E9174291C1CA600073898 /* AddCommentsViewController.swift in Sources */,
+				C0AA4AC22922AD5600F7DFEA /* MyGenresViewController.swift in Sources */,
 				C04DFFE7291B22E800EDBC33 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
